@@ -1,0 +1,207 @@
+/* Add licensed Ogg TRIAL + PP Mori files in /fonts, then uncomment the @font-face rules below.
+@font-face { font-family: "Ogg"; src: url("fonts/Ogg-Regular.woff2") format("woff2"); font-display: swap; }
+@font-face { font-family: "PP Mori"; src: url("fonts/PPMori-Regular.woff2") format("woff2"); font-display: swap; }
+*/
+:root { --brand:#9a0809; --canvas:#fff; --white:#fff; --ink:#000; --link:#3f421d; --nav-glass:rgba(255,255,255,.76); --nav-glass-open:rgba(255,255,255,.94); --display:"Ogg", "Playfair Display", Georgia, serif; --body:"PP Mori", "DM Sans", Arial, sans-serif; --mono:"DM Mono", monospace; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:var(--canvas); color:var(--ink); font:400 15px/1.5 var(--body); }
+a { color:var(--link); text-decoration:none; }
+.skip-link { position:absolute; left:-999px; top:0; background:var(--white); color:var(--brand); padding:10px; z-index:10; }.skip-link:focus { left:10px; }
+.site-header { width:100%; min-height:92px; display:flex; align-items:center; justify-content:space-between; padding:0 5.8vw; background:var(--nav-glass); -webkit-backdrop-filter:blur(28px) saturate(120%); backdrop-filter:blur(28px) saturate(120%); position:fixed; top:0; left:0; z-index:10; }
+.wordmark { letter-spacing:.04em; font:500 22px/1 var(--display); }.site-header .wordmark { display:flex; align-items:center; gap:9px; color:var(--brand); }.brand-mark { width:27px; height:27px; object-fit:contain; }.wordmark span { font-size:7px; vertical-align:top; margin-left:2px; }
+.site-nav { display:flex; align-items:center; gap:30px; color:var(--brand); font-size:15px; letter-spacing:.01em; }.site-nav > a:not(.nav-cta) { opacity:.82; border-bottom:1px solid transparent; padding-bottom:4px; }.site-nav > a:not(.nav-cta):hover { opacity:1; border-color:var(--brand); }.nav-cta { border-bottom:1px solid var(--brand); color:var(--brand); padding:5px 0; }.nav-cta span { margin-left:7px; }
+.site-nav .nav-booking { display:block; min-height:0; padding:6px 10px; border:0 !important; border-radius:0; background:transparent; color:var(--brand); opacity:1; line-height:inherit; text-align:inherit; transition:background-color .2s ease, color .2s ease; }.site-nav .nav-booking:hover { border:0 !important; background:var(--brand); color:var(--white); }
+.menu-toggle { display:none; }
+.hero { position:relative; min-height:100vh; display:flex; align-items:center; color:var(--ink); overflow:hidden; padding:55px 5.8vw; }.hero-image { position:absolute; right:0; top:0; bottom:0; width:50%; background:url("assets/hero-yoga-class.jpg") 60% 62%/cover; }.hero-copy { position:relative; padding:35px 0; max-width:45%; }.eyebrow,.section-label { margin:0 0 22px; color:inherit; font:10px/1.2 var(--mono); text-transform:uppercase; letter-spacing:.12em; }.hero h1 { margin:0 0 27px; font:500 clamp(58px,7.1vw,111px)/.94 var(--display); letter-spacing:-.055em; }.hero h1 em,.join h2 em { font-weight:500; }.hero-intro { max-width:292px; margin:0 0 34px; line-height:1.65; }.text-link { display:inline-flex; gap:19px; border-bottom:1px solid currentColor; padding-bottom:5px; font-size:12px; letter-spacing:.02em; }.text-link span { font-size:17px; line-height:.8; }.hero-caption { position:absolute; right:2.5vw; bottom:38px; margin:0; color:var(--white); text-align:right; font:10px/1.45 var(--mono); letter-spacing:.04em; z-index:1; }
+.hero h1, main h2, main h3 { color:var(--brand); }
+.section-grid { padding:156px 8.5vw; display:grid; grid-template-columns:24% 1fr; gap:40px; }.section-label { color:var(--brand); }.intro-content { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(200px,.55fr); gap:8vw; }.intro h2,.ritual h2,.practice h2,.instagram h2 { margin:0; font:500 clamp(39px,4.6vw,71px)/1.04 var(--display); letter-spacing:-.05em; }.intro-note { align-self:end; padding-bottom:8px; }.intro-note p,.practice-heading > p,.ritual-content > div > p { margin:0 0 28px; max-width:340px; font-size:15px; line-height:1.7; }
+.quote-band { background:var(--white); color:var(--ink); border-top:1px solid rgba(63,66,29,.18); border-bottom:1px solid rgba(63,66,29,.18); padding:102px 4.5vw 96px; text-align:center; }.quote-band p { margin:0 0 17px; font:500 clamp(35px,4.5vw,65px)/1 var(--display); letter-spacing:-.045em; }.quote-band span { color:var(--brand); font:10px var(--mono); text-transform:uppercase; letter-spacing:.12em; opacity:.8; }
+.practice { padding:155px 8.5vw 0; }.practice-heading { display:grid; grid-template-columns:24% minmax(0,1fr) 27%; column-gap:40px; align-items:start; }.practice-heading .section-label { grid-column:1; }.practice-heading h2 { grid-column:2; }.practice-heading > p { grid-column:3; margin:9px 0 0; }.offerings { margin-top:83px; border-top:1px solid rgba(63,66,29,.35); }.offering { min-height:158px; padding:26px 0; border-bottom:1px solid rgba(63,66,29,.35); display:grid; grid-template-columns:10% 30% 1fr 24%; align-items:start; column-gap:20px; }.offering.feature { background:transparent; }.offering-number,.offering-detail { font:10px var(--mono); color:var(--brand); }.offering h3 { margin:0; font:500 37px/1 var(--display); letter-spacing:-.04em; }.offering > p:not(.offering-number) { max-width:290px; margin:0; line-height:1.62; }.offering-detail { color:var(--ink); opacity:.68; text-align:right; }
+.ritual { padding-top:160px; padding-bottom:160px; background:var(--white); }.ritual-content { display:grid; grid-template-columns:1fr .85fr; gap:10vw; }.ritual h2 { max-width:510px; margin-bottom:31px; }.ritual-list { list-style:none; padding:0; margin:5px 0 0; border-top:1px solid rgba(63,66,29,.26); }.ritual-list li { border-bottom:1px solid rgba(63,66,29,.26); padding:19px 0; font:500 21px var(--display); }.ritual-list span { display:inline-block; width:57px; color:var(--brand); font:10px var(--mono); vertical-align:middle; }
+.join { position:relative; background:var(--canvas); padding:151px 8.5vw; overflow:hidden; }.join::after { content:""; position:absolute; width:150px; height:150px; right:11%; top:50%; border:1px solid rgba(154,8,9,.24); border-radius:50%; }.join > * { position:relative; z-index:1; }.join h2 { margin:0 0 31px; color:var(--ink); font:500 clamp(61px,8vw,125px)/.92 var(--display); letter-spacing:-.065em; }.join-copy { max-width:345px; margin:0 0 30px; font-size:15px; line-height:1.7; }.button { display:inline-flex; align-items:center; gap:26px; padding:13px 0; border-bottom:1px solid var(--brand); color:var(--brand); font-size:12px; }.button span { font-size:18px; }.join-note { font:10px var(--mono); margin:20px 0 0; opacity:.7; }.join code { background:rgba(63,66,29,.1); padding:2px 4px; }
+.instagram { padding:121px 8.5vw; display:flex; justify-content:space-between; align-items:flex-end; gap:40px; }.instagram h2 { color:var(--ink); }.follow-copy { max-width:520px; margin:27px 0 0; font-size:15px; line-height:1.7; }.social-contact { min-width:min(100%,395px); }.instagram-link,.contact-link { border-bottom:1px solid rgba(0,0,0,.4); padding:0 0 18px; display:grid; grid-template-columns:1fr auto; gap:4px; color:var(--link); }.instagram-link span,.contact-link span { color:var(--link); font:10px var(--mono); text-transform:uppercase; letter-spacing:.12em; }.instagram-link strong,.contact-link strong { font:500 clamp(25px,2vw,32px)/1 var(--display); letter-spacing:-.035em; }.instagram-link i,.contact-link i { grid-column:2; grid-row:1 / 3; align-self:center; font:clamp(24px,2vw,30px)/1 var(--display); font-style:normal; }.contact-detail { padding-top:28px; }
+.faq { background:var(--white); padding:132px 8.5vw 148px; display:grid; grid-template-columns:42% 1fr; gap:60px; }.faq h2 { margin:0; font:500 clamp(42px,4.6vw,69px)/1.02 var(--display); letter-spacing:-.055em; }.faq-list { border-top:1px solid rgba(63,66,29,.3); }.faq details { border-bottom:1px solid rgba(63,66,29,.3); }.faq summary { display:flex; justify-content:space-between; align-items:center; gap:25px; padding:22px 0; cursor:pointer; list-style:none; font:500 22px/1.25 var(--display); }.faq summary::-webkit-details-marker { display:none; }.faq summary span { color:var(--brand); font:24px/1 var(--body); font-weight:300; }.faq details[open] summary span { transform:rotate(45deg); }.faq details p { max-width:540px; margin:0; padding:0 44px 24px 0; line-height:1.7; }.faq .faq-placeholder { padding-top:0; padding-bottom:24px; color:var(--brand); font:10px var(--mono); letter-spacing:.06em; }
+.site-footer { border-top:1px solid rgba(63,66,29,.18); padding:31px 5.8vw; display:flex; justify-content:space-between; align-items:center; font-size:10px; }.site-footer p { margin:0; opacity:.72; }.site-footer > a:last-child { border-bottom:1px solid currentColor; }
+.sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+@media (max-width:760px) { .site-header { min-height:58px; padding:0 18px; }.menu-toggle { display:flex; width:34px; height:34px; border:0; background:none; flex-direction:column; justify-content:center; gap:6px; padding:0; }.menu-toggle i { display:block; width:24px; height:1px; background:var(--ink); }.site-nav { display:none; position:absolute; top:58px; left:0; right:0; background:rgba(255,255,255,.66); -webkit-backdrop-filter:blur(28px) saturate(120%); backdrop-filter:blur(28px) saturate(120%); padding:20px 22px 25px; border:0; flex-direction:column; align-items:stretch; gap:20px; }.site-nav.open { display:flex; }.nav-cta { width:max-content; }.hero { min-height:720px; display:block; padding:0 22px; }.hero-image { right:0; top:auto; bottom:0; width:100%; height:43%; background-position:60% 62%; }.hero-copy { max-width:88%; padding:72px 0 0; }.hero h1 { font-size:clamp(52px,14vw,78px); }.hero-intro { font-size:14px; margin-bottom:24px; }.hero-caption { right:22px; bottom:21px; font-size:9px; }.section-grid { padding:88px 22px; display:block; }.section-label { margin-bottom:32px; }.intro-content,.ritual-content { display:block; }.intro h2,.ritual h2,.practice h2,.instagram h2,.faq h2 { font-size:clamp(43px,12vw,62px); }.intro-note { margin-top:45px; }.quote-band { padding:72px 22px; }.practice { padding:88px 22px 0; }.practice-heading { display:block; }.practice-heading > p { margin:30px 0 0; }.offerings { display:block; margin-top:58px; }.offering,.offering:not(:first-child) { min-height:0; padding:23px 0; display:grid; grid-template-columns:35px 1fr; gap:14px; }.offering h3 { font-size:32px; }.offering > p:not(.offering-number) { grid-column:2; margin-top:8px; }.offering-detail { grid-column:2; text-align:left; margin-top:8px; }.ritual { padding-top:90px; padding-bottom:90px; }.ritual-content > div > p { margin-bottom:47px; }.join { padding:93px 22px; }.join::after { width:86px; height:86px; right:13%; }.join h2 { font-size:clamp(62px,17vw,100px); }.instagram { padding:87px 22px; display:block; }.instagram-link { margin-top:55px; }.faq { display:block; padding:88px 22px; }.faq-list { margin-top:50px; }.faq summary { font-size:21px; }.faq details p { padding-right:0; }.site-footer { padding:24px 22px; display:grid; grid-template-columns:1fr auto; gap:23px; }.site-footer p { grid-column:1 / -1; grid-row:2; }.site-footer > a:last-child { justify-self:end; } }
+@media (max-width:760px) { .menu-toggle { width:auto; height:34px; color:var(--ink); font:500 11px var(--mono); letter-spacing:.08em; text-transform:lowercase; }.menu-toggle i { display:none; }.menu-toggle::after { content:"+"; font:300 31px/1 var(--display); letter-spacing:0; }.menu-toggle[aria-expanded="true"]::after { content:"×"; font:300 31px/1 var(--display); letter-spacing:0; }.site-nav { display:flex; visibility:hidden; opacity:0; max-height:0; overflow:hidden; transform:translateY(-14px); transition:visibility 0s linear .34s, opacity .28s ease, transform .34s cubic-bezier(.22,.61,.36,1), max-height .34s ease, padding .34s ease; padding:0 22px; border:0; }.site-nav.open { visibility:visible; opacity:1; max-height:360px; transform:translateY(0); padding:20px 22px 28px; transition-delay:0s; } }
+main h1, main h2, main h3 { color:var(--brand); }
+.site-nav { color:var(--brand); }
+.site-nav > a:not(.nav-cta):hover { border-color:var(--brand); }
+.section-label, .offering-number { color:var(--ink); }
+.text-link, .button, .instagram-link, .instagram-link span, .instagram-link:hover strong { color:var(--link); }
+.button { border-color:var(--link); }
+.site-nav a { color:var(--brand); }
+@media (max-width:760px) { .hero { min-height:0; display:flex; flex-direction:column; align-items:stretch; padding:60px 22px 0; }.hero-copy { max-width:100%; padding:0; }.hero h1 { font-size:clamp(48px,11vw,64px); line-height:.94; }.hero-image { position:relative; right:auto; top:auto; bottom:auto; width:calc(100% + 44px); height:380px; margin:40px -22px 0; background-position:60% 62%; }.hero-intro { max-width:340px; }.hero-caption { display:none; } }
+.section-label { color:var(--brand); }
+.intro h2, .practice h2, .ritual h2, .join h2, .instagram h2, .faq h2 { color:#000; font-size:clamp(42px,4.6vw,69px); line-height:1.02; }
+.faq summary { font:400 16px/1.5 var(--body); }
+@media (max-width:760px) { .intro h2, .practice h2, .ritual h2, .join h2, .instagram h2, .faq h2 { font-size:clamp(42px,11vw,60px); } }
+.intro.section-grid { display:block; padding-top:126px; padding-bottom:126px; }
+.intro .section-label { margin-bottom:48px; }
+.section-meta { margin-bottom:48px; }.section-meta .section-label { margin-bottom:14px; }.about-link { display:inline-flex; gap:9px; border-bottom:1px solid currentColor; padding-bottom:3px; color:var(--link); font-size:13px; }.about-link span { font-size:15px; line-height:.8; }
+.intro-content { grid-template-columns:minmax(300px,.8fr) minmax(460px,1.2fr); align-items:start; gap:clamp(56px,8vw,140px); max-width:1240px; margin:0 auto; }
+.intro h2 { max-width:520px; font-size:clamp(42px,3.9vw,60px); }
+.intro-heading .about-link { margin-top:64px; }
+.intro-note { max-width:680px; padding:0; }
+.intro-note p { max-width:650px; margin-bottom:30px; font-size:17px; line-height:1.75; }
+@media (max-width:760px) { .intro.section-grid { padding-top:88px; padding-bottom:88px; }.intro .section-label { margin-bottom:30px; }.section-meta { margin-bottom:30px; }.section-meta .section-label { margin-bottom:12px; }.intro-content { display:block; }.intro h2 { max-width:100%; }.intro-note { margin-top:38px; }.intro-note p { font-size:16px; line-height:1.7; } }
+.offering h3 { color:#000; }
+.practice-heading h2 { grid-column:2 / -1; white-space:nowrap; }
+@media (min-width:761px) { .hero h1 { font-size:clamp(48px,4.8vw,82px); }.hero .hero-intro { margin-top:clamp(36px,4vh,64px); margin-bottom:34px; } }
+.hero h1 em { font-style:normal; }
+.join::after { display:none; }
+@media (min-width:761px) { .hero .text-link { margin-top:clamp(50px,7vh,110px); } }
+.join { min-height:660px; }.join-photo { position:absolute; top:50%; right:8.5vw; width:min(34vw,510px); aspect-ratio:4 / 5; overflow:hidden; transform:translateY(-50%); }.join-photo img { width:100%; height:100%; display:block; object-fit:cover; }
+@media (max-width:760px) { .join { min-height:0; }.join-photo { position:relative; top:auto; right:auto; width:100%; margin-top:52px; transform:none; } }
+@media (max-width:760px) { .practice-heading h2 { white-space:normal; } }
+.js .scroll-reveal { opacity:0; transform:translateY(56px); transition:opacity .9s ease, transform .9s cubic-bezier(.22,.61,.36,1); }.js .scroll-reveal.reveal-left { transform:translateX(-48px); }.js .scroll-reveal.reveal-right { transform:translateX(48px); }.js .scroll-reveal.is-visible { opacity:1; transform:translate(0); }
+@media (prefers-reduced-motion:reduce) { .js .scroll-reveal { opacity:1; transform:none; transition:none; } }
+@media (min-width:761px) { .practice-heading { grid-template-columns:31% 1fr; }.practice-heading .section-label { grid-column:1; grid-row:1; margin-bottom:22px; }.practice-heading h2 { grid-column:1; grid-row:2; text-align:left; }.practice-heading > p { grid-column:2; grid-row:1 / 3; align-self:end; justify-self:end; } }
+.intro .section-label, .practice .section-label { font:10px/1.2 var(--mono); letter-spacing:.12em; }
+@media (min-width:761px) { .practice-heading .section-label, .practice-heading h2 { justify-self:start; text-align:left; } }
+.join-photo { aspect-ratio:1280 / 1707; }.join-photo img { object-fit:contain; }
+.join { min-height:720px; }.join-photo { aspect-ratio:auto; height:auto; overflow:visible; }.join-photo img { height:auto; object-fit:initial; }
+@media (max-width:760px) { .join { min-height:0; }.join-photo img { height:auto; } }
+.join { overflow:visible; }.join-photo { display:block; object-fit:contain; }
+.ritual.section-grid { display:block; }.ritual .section-label { margin-bottom:48px; }.ritual-content { grid-template-columns:minmax(300px,1fr) minmax(300px,.85fr); max-width:1240px; margin:0 auto; }
+@media (max-width:760px) { .ritual .section-label { margin-bottom:30px; } }
+.about-link, .button { gap:7px; padding:0 0 3px; line-height:1.25; }
+.about-link span, .button span { font-size:15px; line-height:1; }
+@media (max-width:760px) { body.menu-open { overflow:hidden; }.site-header { background:var(--nav-glass); }.site-header.menu-open { background:var(--nav-glass-open); }.site-nav { position:fixed; top:58px; right:0; bottom:0; left:0; height:calc(100dvh - 58px); max-height:none; padding:0 22px; overflow-y:auto; background:var(--nav-glass-open); -webkit-backdrop-filter:blur(28px) saturate(120%); backdrop-filter:blur(28px) saturate(120%); pointer-events:none; }.site-nav.open { padding:38px 22px; pointer-events:auto; }.site-nav a { width:max-content; font-size:18px; } }
+@media (max-width:760px) { .hero-image { height:clamp(480px,62svh,620px); margin-top:28px; background-position:60% 58%; }.hero-copy { padding:46px 0 72px; }.hero h1 { margin-bottom:24px; }.hero-intro { margin-bottom:30px; } }
+
+/* Mobile type scale: deliberately smaller and more relaxed than desktop. */
+@media (max-width:760px) {
+  body { font-size:16px; line-height:1.65; }
+  .wordmark { font-size:20px; }
+  .brand-mark { width:24px; height:24px; }
+  .site-nav a { font-size:17px; }
+  .section-label { font-size:10px; letter-spacing:.11em; }
+
+  .hero h1 { font-size:clamp(46px,11.5vw,58px); line-height:.96; letter-spacing:-.052em; }
+  .hero-intro { max-width:310px; font-size:15px; line-height:1.65; }
+  .text-link { font-size:13px; }
+
+  .intro h2,
+  .ritual h2,
+  .instagram h2,
+  .faq h2 { font-size:clamp(38px,10.5vw,50px); line-height:1.02; }
+  .practice-heading h2 { white-space:normal; font-size:clamp(32px,9vw,40px); line-height:1.05; }
+  .join h2 { font-size:clamp(52px,14vw,68px); line-height:.94; }
+
+  .intro-note p,
+  .practice-heading > p,
+  .ritual-content > div > p,
+  .join p,
+  .instagram p,
+  .faq details p { font-size:16px; line-height:1.7; }
+  .offering h3 { font-size:27px; line-height:1.05; }
+  .offering-detail,
+  .offering > p:not(.offering-number) { font-size:15px; line-height:1.6; }
+  .contact { display:block; padding:88px 22px; }
+  .contact h2 { font-size:clamp(38px,10.5vw,50px); margin-bottom:28px; }
+  .contact-copy { margin-top:34px; font-size:16px; }
+  .faq summary { font-size:18px; line-height:1.35; }
+  .ritual-list li { font-size:15px; }
+  .site-footer { font-size:10px; }
+}
+
+/* A calm dissolve avoids movement or height changes while closing. */
+@media (max-width:760px) {
+  .site-header { transition:background .24s ease; }
+  .site-nav {
+    opacity:0;
+    transform:none;
+    clip-path:none;
+    padding:38px 22px;
+    transition:visibility 0s linear .28s, opacity .28s ease-out;
+  }
+  .site-nav.open {
+    opacity:1;
+    transition-delay:0s;
+  }
+}
+
+/* Shared information hierarchy for every numbered section. */
+.section-label { font-size:11px; line-height:1.2; letter-spacing:.12em; }
+.intro h2,
+.practice h2,
+.ritual h2,
+.join h2,
+.instagram h2,
+.faq h2 { font-size:clamp(48px,4.5vw,68px); line-height:1.02; letter-spacing:-.052em; }
+.practice-heading h2 { white-space:normal; }
+
+@media (max-width:760px) {
+  .section-label { font-size:10px; letter-spacing:.11em; }
+  .intro h2,
+  .ritual h2,
+  .join h2,
+  .instagram h2,
+  .faq h2 { font-size:clamp(40px,10.7vw,48px); line-height:1.03; letter-spacing:-.048em; }
+  .practice-heading h2 { font-size:clamp(40px,10.7vw,48px); line-height:1.03; letter-spacing:-.048em; white-space:normal; }
+}
+
+/* Keep the mobile hero complete within the first screen. */
+@media (max-width:760px) {
+  .hero-image { height:auto; aspect-ratio:4 / 3; margin-top:0; background-size:cover; background-position:center; }
+  .hero-copy { padding:104px 0 48px; }
+  .hero h1 { font-size:clamp(40px,10.2vw,48px); line-height:.98; margin-bottom:18px; }
+  .hero-intro { margin-bottom:18px; }
+  .hero .text-link { margin-top:32px; }
+}
+
+/* Slim, seamless navigation across desktop and mobile. */
+.site-header { min-height:64px; }
+@media (max-width:760px) {
+  .site-header { height:64px; min-height:64px; }
+  .site-nav { top:64px; height:calc(100dvh - 64px); }
+  .hero { padding-top:64px; }
+  .site-header { align-items:center; }
+  .site-nav { align-items:flex-end; justify-content:center; gap:26px; text-align:right; }
+  .site-header .wordmark,
+  .site-header .menu-toggle { transform:none; }
+  .join > .section-label,
+  .instagram .section-label { font:10px/1.2 var(--mono); letter-spacing:.11em; }
+  .practice-heading .section-label,
+  .ritual .section-label { margin-bottom:30px; }
+  .join-photo { width:72%; max-width:290px; margin:46px 0 0 auto; }
+}
+
+@media (min-width:761px) {
+  .offering { align-items:center; }
+  .offering > p:not(.offering-number) { justify-self:center; text-align:center; }
+  .practice-heading { display:block; }
+  .practice-heading h2 { white-space:nowrap; }
+  .site-nav { position:absolute; inset:0; justify-content:center; pointer-events:none; }
+  .site-nav a { pointer-events:auto; }
+  .site-nav .nav-booking { position:absolute; right:5.8vw; }
+}
+
+/* Shared text-link treatment for the primary calls to action. */
+.text-link,
+.about-link,
+.button {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:5px 8px;
+  border-bottom:1px solid currentColor;
+  color:var(--link);
+  font:400 13px/1.25 var(--body);
+  letter-spacing:0;
+  transition:background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+.text-link span,
+.about-link span,
+.button span { font-size:16px; line-height:1; }
+.text-link:hover,
+.about-link:hover,
+.button:hover { background:var(--link); border-color:var(--link); color:var(--white); }
+
+@media (max-width:760px) {
+  .hero-copy { padding-top:34px; }
+  .hero h1 { margin-bottom:42px; }
+}

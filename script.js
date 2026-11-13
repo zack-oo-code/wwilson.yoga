@@ -1,0 +1,74 @@
+const menuButton = document.querySelector('.menu-toggle');
+const menu = document.querySelector('.site-nav');
+const header = document.querySelector('.site-header');
+let menuCloseTimer;
+
+function setMenuState(isOpen) {
+  window.clearTimeout(menuCloseTimer);
+  menu?.classList.toggle('open', isOpen);
+  header?.classList.toggle('menu-open', isOpen);
+  menuButton?.setAttribute('aria-expanded', String(isOpen));
+  const menuLabel = menuButton?.querySelector('.sr-only');
+  if (menuLabel) menuLabel.textContent = isOpen ? 'Close menu' : 'Open menu';
+
+  if (isOpen) {
+    document.body.classList.add('menu-open');
+    return;
+  }
+
+  // Keep the page locked until the closing transition has finished.
+  menuCloseTimer = window.setTimeout(() => {
+    document.body.classList.remove('menu-open');
+  }, 280);
+}
+
+menuButton?.addEventListener('click', () => {
+  setMenuState(!menu?.classList.contains('open'));
+});
+
+menu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+  setMenuState(false);
+}));
+
+document.querySelector('#year').textContent = new Date().getFullYear();
+
+document.documentElement.classList.add('js');
+
+const revealTargets = document.querySelectorAll([
+  '.hero-copy > *',
+  '.hero-image',
+  '.section-label',
+  '.intro-heading',
+  '.intro-note p',
+  '.practice-heading > h2',
+  '.practice-heading > p',
+  '.offering',
+  '.ritual-content > div',
+  '.ritual-list li',
+  '.join > :not(.join-photo)',
+  '.instagram > div',
+  '.instagram-link',
+  '.contact > *',
+  '.faq-heading',
+  '.faq details',
+  '.site-footer > *',
+].join(','));
+const revealObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry) => {
+    if (!entry.isIntersecting) return;
+    requestAnimationFrame(() => entry.target.classList.add('is-visible'));
+    observer.unobserve(entry.target);
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+
+revealTargets.forEach((target, index) => {
+  target.classList.add('scroll-reveal');
+  if (target.matches('.section-label, .intro-heading, .practice-heading > h2, .ritual-content > div, .join > :not(.join-photo), .contact > :not(.contact-copy), .faq-heading')) {
+    target.classList.add('reveal-left');
+  }
+  if (target.matches('.intro-note p, .practice-heading > p, .ritual-list li, .instagram-link, .contact-copy, .faq details')) {
+    target.classList.add('reveal-right');
+  }
+  target.style.transitionDelay = `${Math.min(index % 3, 2) * 90}ms`;
+  revealObserver.observe(target);
+});
