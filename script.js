@@ -26,7 +26,24 @@ menuButton?.addEventListener('click', () => {
   setMenuState(!menu?.classList.contains('open'));
 });
 
-menu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+menu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', (event) => {
+  const destination = link.getAttribute('href');
+
+  // On mobile, the full-screen menu temporarily locks page scrolling while it
+  // dissolves away. Handle in-page links after that transition so the target
+  // section is never left behind the fixed navigation bar.
+  if (destination?.startsWith('#')) {
+    event.preventDefault();
+    const target = document.querySelector(destination);
+    setMenuState(false);
+
+    window.setTimeout(() => {
+      target?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.replaceState(null, '', destination);
+    }, 300);
+    return;
+  }
+
   setMenuState(false);
 }));
 

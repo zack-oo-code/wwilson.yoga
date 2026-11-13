@@ -4,8 +4,9 @@
 */
 :root { --brand:#9a0809; --canvas:#fff; --white:#fff; --ink:#000; --link:#3f421d; --nav-glass:rgba(255,255,255,.76); --nav-glass-open:rgba(255,255,255,.94); --display:"Ogg", "Playfair Display", Georgia, serif; --body:"PP Mori", "DM Sans", Arial, sans-serif; --mono:"DM Mono", monospace; }
 * { box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body { margin:0; background:var(--canvas); color:var(--ink); font:400 15px/1.5 var(--body); }
+html { scroll-behavior:smooth; overflow-x:clip; }
+section[id] { scroll-margin-top:84px; }
+body { max-width:100%; margin:0; overflow-x:clip; background:var(--canvas); color:var(--ink); font:400 15px/1.5 var(--body); }
 a { color:var(--link); text-decoration:none; }
 .skip-link { position:absolute; left:-999px; top:0; background:var(--white); color:var(--brand); padding:10px; z-index:10; }.skip-link:focus { left:10px; }
 .site-header { width:100%; min-height:92px; display:flex; align-items:center; justify-content:space-between; padding:0 5.8vw; background:var(--nav-glass); -webkit-backdrop-filter:blur(28px) saturate(120%); backdrop-filter:blur(28px) saturate(120%); position:fixed; top:0; left:0; z-index:10; }
@@ -57,6 +58,7 @@ main h1, main h2, main h3 { color:var(--brand); }
 @media (max-width:760px) { .join { min-height:0; }.join-photo { position:relative; top:auto; right:auto; width:100%; margin-top:52px; transform:none; } }
 @media (max-width:760px) { .practice-heading h2 { white-space:normal; } }
 .js .scroll-reveal { opacity:0; transform:translateY(56px); transition:opacity .9s ease, transform .9s cubic-bezier(.22,.61,.36,1); }.js .scroll-reveal.reveal-left { transform:translateX(-48px); }.js .scroll-reveal.reveal-right { transform:translateX(48px); }.js .scroll-reveal.is-visible { opacity:1; transform:translate(0); }
+.js .site-footer > * { opacity:1; transform:none; transition:none; }
 @media (prefers-reduced-motion:reduce) { .js .scroll-reveal { opacity:1; transform:none; transition:none; } }
 @media (min-width:761px) { .practice-heading { grid-template-columns:31% 1fr; }.practice-heading .section-label { grid-column:1; grid-row:1; margin-bottom:22px; }.practice-heading h2 { grid-column:1; grid-row:2; text-align:left; }.practice-heading > p { grid-column:2; grid-row:1 / 3; align-self:end; justify-self:end; } }
 .intro .section-label, .practice .section-label { font:10px/1.2 var(--mono); letter-spacing:.12em; }
