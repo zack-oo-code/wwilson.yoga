@@ -26,6 +26,23 @@ menuButton?.addEventListener('click', () => {
   setMenuState(!menu?.classList.contains('open'));
 });
 
+function scrollToTop(event) {
+  event.preventDefault();
+
+  // `document.scrollingElement` is more reliable than window scrolling on
+  // mobile Safari. Keeping the #top destination also provides a no-script
+  // fallback for the footer link.
+  const scrollRoot = document.scrollingElement || document.documentElement;
+  const behavior = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+  scrollRoot.scrollTo({ top: 0, left: 0, behavior });
+  window.scrollTo({ top: 0, left: 0, behavior });
+  history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
+}
+
+document.querySelectorAll('a[href="#top"]').forEach((link) => {
+  link.addEventListener('click', scrollToTop);
+});
+
 menu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', (event) => {
   const destination = link.getAttribute('href');
 
